@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block portada %}
+
+<div class="portada">
+    <img src="{{ url_for('static', filename='i/5.jpg') }}" alt="Portada">
+    <h1 class="texto" id="titulo">¡GRACIAS!</h1>
+</div>
+
+{% endblock %}
+
+{% block content %}
+<section style="margin-top: 120px; padding: 0 16px;">
+    <h2>¡Gracias{% if nombre %}, {{ nombre }}{% endif %}!</h2>
+    {% if interes %}
+    <p style="color: white; font-size: 22px;">Nos contaste que te gusta: <strong style="color: #CCFF00;">{{ interes }}</strong></p>
+    {% endif %}
+    <div style="color: white; font-size: 18px; line-height: 1.8;">
+        {% if juegos %}<div>Juegos que juegas: <strong>{{ juegos }}</strong></div>{% endif %}
+        {% if deporte %}<div>Tu deporte favorito: <strong>{{ deporte }}</strong></div>{% endif %}
+        {% if series %}<div>Tu serie favorita: <strong>{{ series }}</strong></div>{% endif %}
+    </div>
+</section>
+{% endblock %}
