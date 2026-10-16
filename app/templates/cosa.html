@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aplicacion web deportiva</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js')}}"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="{{ request.endpoint }}">
+
+    {% block portada %}
+    {% endblock %}
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
